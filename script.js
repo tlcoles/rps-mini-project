@@ -20,8 +20,8 @@ function playRPS() {
         document.getElementById("showResult").innerHTML = 
         "You chose " + 
         yourChoice + 
-        ". The computer chose " 
-        + computerChoice + 
+        ". The computer chose " +
+        computerChoice + 
         ". Click START to play again!"
     }
     else {
