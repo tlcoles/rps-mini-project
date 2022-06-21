@@ -1,14 +1,30 @@
-let question = "Enter your selection (R, P, or S):";
+/* Set variables and create function of  game play */
 
-let result = window.confirm(question);
+function playRPS() {
+    let choiceRPorS = ["r", "R", "p", "P", "s", "S"];
 
-/* Computer generates random selection. It takes a variable  */ 
+    let yourChoice = prompt("Enter R, P, or S to play!");
+        console.log(yourChoice);
 
-let gamePlay = ["R", "P", "S"];
+/* Prompt player to enter a selection and verify that choice is valid */
+    if (choiceRPorS.includes(yourChoice)) {
 
-let randomIndex = Math.floor(Math.random()*gamePlay.length);
+/* Generate random computer answer */
+        let randomIndex = Math.floor(Math.random() * choiceRPorS.length);
+            console.log(randomIndex);
 
-let randomItem = gamePlay[randomIndex];
+        let computerChoice = choiceRPorS[randomIndex];
+            console.log(computerChoice);
 
-console.log(randomItem);
-
+/* Output result to HTML */
+        document.getElementById("showResult").innerHTML = 
+        "You chose " + 
+        yourChoice + 
+        ". The computer chose " 
+        + computerChoice + 
+        ". Click START to play again!"
+    }
+    else {
+        alert("You made the wrong choice. Choose R, P, or S.")
+    }
+}
